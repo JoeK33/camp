@@ -3,7 +3,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Camera</title>
+        <title>Glamp Stream</title>
 
         <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
@@ -14,23 +14,29 @@
     </head>
     <body>
         <div class="container">
-            <div class="row top">
-                <div class="col-xs-1 scalable-logo">
-                    <img src="static/img/logo.png">
+                <div class="videoFrame">
+                    <div class="bottom-left"> <p id="cameraAngle" style="color:white;">Camera Angle: 0</p></div>
+                    <div class="video"><img id="video"></img><div>
                 </div>
-                <div class="col-xs-11">
-                    <h1>camp</h1>
-                    <p>
-                        A webcam server for your Pi.
-                    </p>
-                </div>
-            </div>
+        </div>
 
-            <div class="row">
-                <div class="col-xs-12">
-                    <img id="video"></img>
-                </div>
-            </div>
+        <div class="row">
+            <button type="button" id="lowLightToggle" class="block">Toggle Low Light</button>
+            <p id="isLowLight" class="block" style="color:black; margin-right: 1000px;">Low Light Status</p>
+            <button type="button" id="takePhoto" class="block" style="margin-right: 1000px;">Take Photo</button>
+            <button type="button" id="resDown" class="block">Resolution Down</button>
+            <p id="resolution" class="block" style="color:black;">100 x 200</p>
+            <button type="button" id="resUp" class="block" style="margin-right: 1000px;">Resolution Up</button>
+            <button type="button" id="startRecording" class="block">Start Recording</button>
+            <p id="isRecording" class="block" style="color:black;">Not Recording</p>
+            <button type="button" id="stopRecording" class="block">Stop Recording</button>
+        </div>
+
+        <div class="tall-row"></div>
+
+        <div class="row">
+            <button type="button" id="reboot" class="block" style="margin-right: 1000px;">Reboot</button>
+            <button type="button" id="shutdown" class="block">Shut Down</button>
         </div>
 
         <script src="static/client.js" type="text/javascript"></script>
